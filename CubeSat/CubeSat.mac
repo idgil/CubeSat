@@ -1,0 +1,65 @@
+#/control/execute vis.mac
+#/control/execute icons.mac
+/tracking/verbose 0
+/control/verbose 2
+/run/verbose 2
+
+
+/gps/particle e-
+#/gps/particle proton
+#/gps/particle gamma
+
+#/gps/pos/type Point
+#/gps/pos/centre  0. 0. 25. cm
+#/gps/pos/centre  0. 60. 51.53 mm
+#/gps/direction 0. 0. -1.
+##############################
+/gps/pos/type Surface
+/gps/pos/shape Sphere
+/gps/pos/centre  50. 50.  51. mm
+/gps/pos/radius 7.5 cm
+
+/gps/ang/type cos
+/gps/ang/mintheta 00 deg
+/gps/ang/maxtheta 90 deg
+############################
+#/gps/pos/type Plane
+#/gps/pos/shape Square
+#/gps/pos/centre  0. 30. 51.35 mm
+#/gps/pos/halfx 29. mm
+#/gps/pos/halfy 52.0 mm
+#/gps/direction 0. -1. 0.
+#/gps/pos/rot1 1 0 0
+#/gps/pos/rot2 0 0 1
+#####################
+
+#/gps/energy 2. MeV
+
+
+#L=3.2 electron spectrum
+/gps/ene/type Arb
+/gps/hist/type arb
+
+#/gps/hist/point 0.06 1220000.
+#/gps/hist/point 0.105 1220000.
+#/gps/hist/point 0.225 400000.
+/gps/hist/point 0.4 110000.
+/gps/hist/point 0.75 30000.
+/gps/hist/point 1.5 7000.
+/gps/hist/point 3. 1050.
+/gps/hist/point 4.5 72.
+/gps/hist/point 5.5 11.2
+/gps/hist/point 6.5 0.79
+/gps/hist/point 7.5 0.
+
+/gps/hist/inter Log
+
+
+
+##########
+
+#/run/numberOfThreads 2 #if MT is activated
+
+/run/initialize
+
+/run/beamOn 1000000

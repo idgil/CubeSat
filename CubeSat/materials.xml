@@ -1,0 +1,75 @@
+<!-- this is a file defining materials in gdml -->
+<!-- it is _not_ a standalone GDML file -->
+
+ <materials>
+  <element Z="7" formula="N" name="Nitrogen" >
+   <atom value="14.01" />
+  </element>
+  <element Z="8" formula="O" name="Oxygen" >
+   <atom value="16" />
+  </element>
+  <element Z="13" formula="Al" name="Aluminium" >
+   <atom value="26.98" />
+  </element>
+  <element Z="29" formula="Cu" name="Copper" >
+   <atom value="63.54" />
+  </element>
+  <element Z="12" formula="Mg" name="Magnesium" >
+   <atom value="24.35" />
+  </element>
+  <element Z="25" formula="Mn" name="Manganese" >
+   <atom value="54.938" />
+  </element>
+  <element Z="14" formula="Si" name="Silicon" >
+   <atom value="28.086" />
+  </element>
+  <element Z="6" formula="C" name="Carbon" >
+   <atom value="12.0116" />
+  </element>
+  <element Z="1" formula="H" name="Hydrogen" >
+   <atom value="1.00784" />
+  </element>
+
+
+  <material formula=" " name="Air" >
+   <D value="0.0012899999999999999"  unit="g/cm3"/>
+   <fraction n="0.70000000000000007" ref="Nitrogen" />
+   <fraction n="0.29999999999999999" ref="Oxygen" />
+  </material>
+
+  <material formula=" " name="Dural" >
+   <D value="2.7"  unit="g/cm3"/>
+   <fraction n="0.936" ref="Aluminium" />
+   <fraction n="0.044" ref="Copper" />
+   <fraction n="0.015" ref="Magnesium" />
+   <fraction n="0.005" ref="Manganese" />
+  </material>
+
+
+  <material formula=" " name="Box_material" >
+   <D value="2.0"  unit="g/cm3"/>
+   <fraction n="0.936" ref="Aluminium" />
+   <fraction n="0.044" ref="Copper" />
+   <fraction n="0.015" ref="Magnesium" />
+   <fraction n="0.005" ref="Manganese" />
+  </material>
+
+  <material formula=" " name="Tube_material" >
+   <D value="2.0"  unit="g/cm3"/>
+   <fraction n="0.936" ref="Aluminium" />
+   <fraction n="0.044" ref="Copper" />
+   <fraction n="0.015" ref="Magnesium" />
+   <fraction n="0.005" ref="Manganese" />
+  </material>
+
+
+  <material formula=" " name="NemaG10" >
+   <D value="1.7"  unit="g/cm3"/>
+   <composite n="1" ref="Silicon" />
+   <composite n="2" ref="Oxygen" />
+   <composite n="3" ref="Carbon" />
+   <composite n="3" ref="Hydrogen" />
+  </material>
+
+
+ </materials>

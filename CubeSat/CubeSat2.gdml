@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gdml [
+<!ENTITY materials SYSTEM "materials.xml">
+]>
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
+<define>
+<position name="central" x="0" y="0" z="0" unit="mm"/>
+<rotation name="identity" x="0" y="0" z="0" unit="degree"/>
+<variable name="DEGtoRAD" value="1.74532925199433E-02"/>
+</define>
+
+<!-- the content of the materials.xml file will be included here -->
+
+&materials;
+
+
+<solids>
+<box name="World_PartBody" x="(200.000000)*2" y="(200.000000)*2" z="(200.000000)*2" lunit="mm"/>
+<box name="Wall1_PartBody" x="(50.000000)*2" y="(50.000000)*2" z="(1.000000)*2" lunit="mm"/>
+<box name="Wall2_PartBody" x="(48.000000)*2" y="(1.000000)*2" z="(50.000000)*2" lunit="mm"/>
+<box name="Wall3_PartBody" x="(1.000000)*2" y="(50.000000)*2" z="(50.000000)*2" lunit="mm"/>
+<box name="plate_PartBody" x="(47.000000)*2" y="(47.000000)*2" z="(0.800000)*2" lunit="mm"/>
+<box name="Detector_PartBody" x="(5.000000)*2" y="(5.000000)*2" z="(1.000000)*2" lunit="mm"/>
+<box name="SunPanel_PartBody" x="(50.000000)*2" y="(1.000000)*2" z="(50.000000)*2" lunit="mm"/>
+<box name="SunPanelShield_PartBody" x="(50.000000)*2" y="(0.100000)*2" z="(50.000000)*2" lunit="mm"/>
+<box name="Box1_PartBody" x="(25.000000)*2" y="(25.000000)*2" z="(5.000000)*2" lunit="mm"/>
+<tube name="Tube_PartBody" rmin="0.000000" rmax="42.000000" z="(7.000000)*2" startphi="0.000000" deltaphi="360.000000" aunit="deg" lunit="mm"/>
+<box name="Box2_PartBody" x="(8.000000)*2" y="(15.000000)*2" z="(8.000000)*2" lunit="mm"/>
+</solids>
+<structure>
+
+<volume name="Wall1">
+<materialref ref="G4_Al"/>
+<solidref ref="Wall1_PartBody"/>
+</volume>
+<volume name="Wall2">
+<materialref ref="G4_Al"/>
+<solidref ref="Wall2_PartBody"/>
+</volume>
+<volume name="Wall3">
+<materialref ref="G4_Al"/>
+<solidref ref="Wall3_PartBody"/>
+</volume>
+<volume name="plate">
+<materialref ref="plate_material"/>
+<solidref ref="plate_PartBody"/>
+</volume>
+<volume name="Detector">
+<materialref ref="G4_Si"/>
+<solidref ref="Detector_PartBody"/>
+</volume>
+<volume name="SunPanel">
+<materialref ref="G4_Si"/>
+<solidref ref="SunPanel_PartBody"/>
+</volume>
+<volume name="SunPanelShield">
+<materialref ref="G4_SILICON_DIOXIDE"/>
+<solidref ref="SunPanelShield_PartBody"/>
+</volume>
+<volume name="Box1">
+<materialref ref="Box_material"/>
+<solidref ref="Box1_PartBody"/>
+</volume>
+<volume name="Tube">
+<materialref ref="Tube_material"/>
+<solidref ref="Tube_PartBody"/>
+</volume>
+<volume name="Box2">
+<materialref ref="Box_material"/>
+<solidref ref="Box2_PartBody"/>
+</volume>
+
+
+<volume name="World">
+<materialref ref="G4_Galactic"/>
+<solidref ref="World_PartBody"/>
+<physvol>
+<volumeref ref="Wall1"/>
+<position name="Wall1_pos_World" x="50" y="50" z="1" unit="mm"/>
+<rotationref ref="identity"/>
+</physvol>
+<physvol>
+<volumeref ref="Wall1"/>
+<position name="Wall1_pos_World" x="50" y="50" z="103" unit="mm"/>
+<rotationref ref="identity"/>
+</physvol>
+<physvol>
+<volumeref ref="Wall2"/>
+<position name="Wall2_pos_World" x="50" y="1" z="52" unit="mm"/>
+<rotationref ref="identity"/>
+</physvol>
+<physvol>
+<volumeref ref="Wall2"/>
+<position name="Wall2_pos_World" x="50" y="99" z="52" unit="mm"/>
+<rotationref ref="identity"/>
+</physvol>
+<physvol>
+<volumeref ref="Wall3"/>
+<position name="Wall3_pos_World" x="1" y="50" z="52" unit="mm"/>
+<rotationref ref="identity"/>
+</physvol>
+<physvol>
+<volumeref ref="Wall3"/>
+<position name="Wall3_pos_World" x="99" y="50" z="52" unit="mm"/>
+<rotationref ref="identity"/>
+</physvol>
+<physvol>
+<volumeref ref="plate"/>
+<position name="plate_pos_World" x="50" y="50" z="27" unit="mm"/>
+<rotationref ref="identity"/>
+</physvol>
+<physvol>
+<volumeref ref="plate"/>
+<position name="plate_pos_World" x="50" y="50" z="52" unit="mm"/>
+<rotationref ref="identity"/>
+</physvol>
+<physvol>
+<volumeref ref="plate"/>
+<position name="plate_pos_World" x="50" y="50" z="75" unit="mm"/>
+<rotationref ref="identity"/>
+</physvol>
+<physvol>
+<volumeref ref="Detector"/>
+<position name="Detector_pos_World" x="25" y="25" z="28.8" unit="mm"/>
+<rotationref ref="identity"/>
+</physvol>
+<physvol>
+<volumeref ref="Detector"/>
+<position name="Detector_pos_World" x="50" y="50" z="53.8" unit="mm"/>
+<rotationref ref="identity"/>
+</physvol>
+<physvol>
+<volumeref ref="Detector"/>
+<position name="Detector_pos_World" x="75" y="75" z="76.8" unit="mm"/>
+<rotationref ref="identity"/>
+</physvol>
+<physvol>
+<volumeref ref="SunPanel"/>
+<position name="SunPanel_pos_World" x="50" y="-1" z="52" unit="mm"/>
+<rotationref ref="identity"/>
+</physvol>
+<physvol>
+<volumeref ref="SunPanel"/>
+<position name="SunPanel_pos_World" x="50" y="101" z="52" unit="mm"/>
+<rotationref ref="identity"/>
+</physvol>
+<physvol>
+<volumeref ref="SunPanelShield"/>
+<position name="SunPanelShield_pos_World" x="50" y="-2.1" z="52" unit="mm"/>
+<rotationref ref="identity"/>
+</physvol>
+<physvol>
+<volumeref ref="SunPanelShield"/>
+<position name="SunPanelShield_pos_World" x="50" y="102.1" z="52" unit="mm"/>
+<rotationref ref="identity"/>
+</physvol>
+<physvol>
+<volumeref ref="Box1"/>
+<position name="Box1_pos_World" x="50" y="27" z="94" unit="mm"/>
+<rotationref ref="identity"/>
+</physvol>
+<physvol>
+<volumeref ref="Tube"/>
+<position name="Tube_pos_World" x="50" y="50" z="9" unit="mm"/>
+<rotationref ref="identity"/>
+</physvol>
+<physvol>
+<volumeref ref="Box2"/>
+<position name="Box2_pos_World" x="10" y="50" z="65" unit="mm"/>
+<rotationref ref="identity"/>
+</physvol>
+<physvol>
+<volumeref ref="Box2"/>
+<position name="Box2_pos_World" x="10" y="50" z="38" unit="mm"/>
+<rotationref ref="identity"/>
+</physvol>
+</volume>
+
+</structure>
+<setup name="FAIRgeom" version="1.0">
+<world ref="World"/>
+</setup>
+</gdml>
